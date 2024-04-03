@@ -65,8 +65,8 @@ public class CategoriesImplement implements ICategories {
                 int choice = InputMethods.getInteger();
                 switch (choice) {
                     case 1:
-                        categoriesList.get(index).setCatalogName("");
                         System.out.println("Tên cũ: " + categoriesList.get(index).getCatalogName());
+                        categoriesList.get(index).setCatalogName("");
                         categoriesList.get(index).setCatalogName(categoriesList.get(index).getName());
                         break;
                     case 2:

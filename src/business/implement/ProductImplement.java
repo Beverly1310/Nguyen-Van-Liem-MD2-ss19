@@ -69,13 +69,13 @@ public class ProductImplement implements IProduct {
                 int choice = InputMethods.getInteger();
                 switch (choice) {
                     case 1:
-                        productList.get(index).setProductId("");
                         System.out.println("ID cũ: " + productList.get(index).getProductId());
+                        productList.get(index).setProductId("");
                         productList.get(index).setProductId(productList.get(index).getId());
                         break;
                     case 2:
-                        productList.get(index).setProductName("");
                         System.out.println("Tên cũ: " + productList.get(index).getProductName());
+                        productList.get(index).setProductName("");
                         productList.get(index).setProductName(productList.get(index).getName());
                         break;
                     case 3:
