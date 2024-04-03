@@ -14,7 +14,7 @@ import static business.implement.ProductImplement.productList;
 public class CategoriesImplement implements ICategories {
     public static File categoriesFile = new File("./src/business/storage/categoriesstorage.txt");
     public static List<Categories> categoriesList = new ArrayList<>();
-
+//trả về index thông qua id
     @Override
     public int findIndexById() {
         System.out.println("Nhập Id danh mục: ");
@@ -26,7 +26,7 @@ public class CategoriesImplement implements ICategories {
         }
         return -1;
     }
-
+// tạo mới danh mục
     @Override
     public void createData() {
         System.out.println("Nhập số danh mục muốn thêm");
@@ -39,7 +39,7 @@ public class CategoriesImplement implements ICategories {
         }
         IOFile.updateFile(categoriesFile, categoriesList);
     }
-
+// hiển thị toàn bộ danh mục
     @Override
     public void displayAll() {
         if (categoriesFile.length() != 0) {
@@ -49,7 +49,7 @@ public class CategoriesImplement implements ICategories {
             System.err.println("Không có danh mục nào trong danh sách");
         }
     }
-
+// cập nhật danh mục
     @Override
     public void updateData() {
         categoriesList.forEach(categories -> System.out.printf("Mã Id: %-5s || Tên danh mục: %-10s\n",categories.getCatalogId(),categories.getCatalogName()));
@@ -90,7 +90,7 @@ public class CategoriesImplement implements ICategories {
             throw new RuntimeException("Danh mục không tồn tại");
         }
     }
-
+// xóa danh mục
     @Override
     public void deleteData() {
         categoriesList.forEach(categories -> System.out.printf("Mã Id: %-5s || Tên danh mục: %-10s\n",categories.getCatalogId(),categories.getCatalogName()));
@@ -106,7 +106,7 @@ public class CategoriesImplement implements ICategories {
             throw new RuntimeException("Danh mục không tồn tại");
         }
     }
-
+// thay đổi trạng thái
     @Override
     public void changeStatus() {
         int index = findIndexById();

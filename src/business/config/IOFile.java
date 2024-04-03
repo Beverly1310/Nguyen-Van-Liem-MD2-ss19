@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IOFile {
+    // đọc dữ liệu trong file
     public static <T> List<T> getFile(File file){
         FileInputStream fis = null;
         ObjectInputStream ois = null;
@@ -33,6 +34,7 @@ public class IOFile {
         }
         return list;
     }
+    //ghi lại dữ liệu mới vào file
     public static <T> void updateFile(File file, List<T> list){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;

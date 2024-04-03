@@ -14,7 +14,7 @@ import static business.implement.CategoriesImplement.categoriesList;
 public class ProductImplement implements IProduct {
     public static File productFile = new File("./src/business/storage/productstorage.txt");
     public static List<Product> productList = new ArrayList<>();
-
+// tìm index thông qua id
     @Override
     public int findIndexById() {
         System.out.println("Nhập Id sản phẩm: ");
@@ -26,7 +26,7 @@ public class ProductImplement implements IProduct {
         }
         return -1;
     }
-
+// thêm mơi sp
     @Override
     public void createData() {
         System.out.println("Nhập số sản phẩm muốn thêm");
@@ -39,7 +39,7 @@ public class ProductImplement implements IProduct {
         }
         IOFile.updateFile(productFile, productList);
     }
-
+// hiển thị toàn bộ sp
     @Override
     public void displayAll() {
         if (productFile.length() != 0) {
@@ -49,7 +49,7 @@ public class ProductImplement implements IProduct {
             System.err.println("Không có sản phẩm nào trong danh sách");
         }
     }
-
+// cập nhật sản phẩm
     @Override
     public void updateData() {
         productList.forEach(product -> System.out.printf("Mã Id: %-5s || Tên sản phẩm: %-10s\n",product.getProductId(),product.getProductName()));
@@ -111,7 +111,7 @@ public class ProductImplement implements IProduct {
             throw new RuntimeException("Sản phẩm không tồn");
         }
     }
-
+//xóa sp
     @Override
     public void deleteData() {
         productList.forEach(product -> System.out.printf("Mã Id: %-5s || Tên sản phẩm: %-10s\n",product.getProductId(),product.getProductName()));
@@ -123,7 +123,7 @@ public class ProductImplement implements IProduct {
             throw new RuntimeException("Sản phẩm không tồn");
         }
     }
-
+// sx sản phẩm
     @Override
     public void sortProduct() {
         productList = IOFile.getFile(productFile);
@@ -132,7 +132,7 @@ public class ProductImplement implements IProduct {
         });
         IOFile.updateFile(productFile, productList);
     }
-
+// tìm thông qua tên
     @Override
     public void searchByName() {
         productList = IOFile.getFile(productFile);
@@ -144,7 +144,7 @@ public class ProductImplement implements IProduct {
             throw new RuntimeException("Sản phẩm không tồn");
         }
     }
-
+//tìm trong khoảng giá
     @Override
     public void searchWithin() {
         productList = IOFile.getFile(productFile);

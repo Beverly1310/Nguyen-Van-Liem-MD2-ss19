@@ -85,7 +85,7 @@ public class Product implements Serializable {
     public void setProductStatus(int productStatus) {
         this.productStatus = productStatus;
     }
-
+//nhập dữ liệu
     public void inputData() {
         this.productId = getId();
         this.productName = getName();
@@ -95,7 +95,7 @@ public class Product implements Serializable {
         this.catalogId = getPrdCatalogId();
         this.productStatus = getStatus();
     }
-
+// lấy id
     public String getId() {
         while (true) {
             System.out.println("Nhập mã sản phẩm:");
@@ -112,7 +112,7 @@ public class Product implements Serializable {
             }
         }
     }
-
+// lấy tên
     public String getName() {
         while (true) {
             System.out.println("Nhập tên sản phẩm");
@@ -128,7 +128,7 @@ public class Product implements Serializable {
             }
         }
     }
-
+// lấy giá
     public float getPrdPrice() {
         while (true) {
             System.out.println("Nhập giá của sản phẩm: ");
@@ -140,19 +140,19 @@ public class Product implements Serializable {
             }
         }
     }
-
+// lấy mô tả sp
     public String getPrdDescription() {
         System.out.println("Nhập mô tả:");
         String inputDescription = InputMethods.getString();
         return inputDescription;
     }
-
+    // lấy ngày nhập hàng
     public Date getDate() {
         System.out.println("Nhập ngày nhập sản phẩm");
         Date inputDate = InputMethods.getDate();
         return inputDate;
     }
-
+// lấy id danh mục
     public int getPrdCatalogId() {
         while (true) {
             System.out.println("Mời nhập Id danh mục cho sản phẩm");
@@ -167,7 +167,7 @@ public class Product implements Serializable {
             }
         }
     }
-
+//lấy trạng thái
     public int getStatus() {
         while (true) {
             System.out.println("Nhập trạng thái: ");
@@ -179,7 +179,7 @@ public class Product implements Serializable {
             }
         }
     }
-
+// hiển thị thông tin
     public void displayData() {
         System.out.printf("Mã sản phẩm: %-5s || Tên sản phẩm: %-10s || Giá: %-10f\nMô tả: %-15s\nNgày nhập: %-10s || Thuộc mã danh mục: %-5s\nTrạng thái: %-8s\n",
                 this.productId, this.productName, this.price, this.description, this.created.toString(),

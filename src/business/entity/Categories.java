@@ -55,13 +55,13 @@ public class Categories implements Serializable {
     public void setCatalogStatus(boolean catalogStatus) {
         this.catalogStatus = catalogStatus;
     }
-
+//nhập dữ liệu
     public void inputData() {
         this.catalogName = getName();
         this.catalogDescription = getDescription();
         this.catalogStatus = getStatus();
     }
-
+//id tự tăng
     public int autoId() {
         int maxId = 0;
         for (int i = 0; i < categoriesList.size(); i++) {
@@ -71,7 +71,7 @@ public class Categories implements Serializable {
         }
         return maxId+1;
     }
-
+//lấy tên
     public String getName() {
         while (true) {
             System.out.println("Nhập tên danh mục:");
@@ -87,19 +87,19 @@ public class Categories implements Serializable {
             }
         }
     }
-
+// lấy mô tả
     public String getDescription() {
         System.out.println("Nhập mô tả:");
         String inputDescription = InputMethods.getString();
         return inputDescription;
     }
-
+// lấy trạng thái
     public boolean getStatus() {
         System.out.println("Nhập trạng thái: ");
         boolean inputStatus = InputMethods.getBoolean();
         return inputStatus;
     }
-
+// hiển thị thông tin
     public void displayData() {
         System.out.printf("ID: %-5d || Tên sản phẩm: %-10s \nMô tả: %-20s\nTrạng thái: %-5s\n",
                 this.catalogId, this.catalogName, this.catalogDescription, this.catalogStatus ? "Hoạt động" : "Không hoạt động");
