@@ -154,16 +154,21 @@ public class Product implements Serializable {
     }
 // lấy id danh mục
     public int getPrdCatalogId() {
-        while (true) {
-            System.out.println("Mời nhập Id danh mục cho sản phẩm");
-            categoriesList.stream().forEach(categories -> {
-                System.out.printf("Mã ID: %-5d || Tên danh mục: %-10s\n", categories.getCatalogId(), categories.getCatalogName());
-            });
-            int inputCatalogId = InputMethods.getInteger();
-            if (categoriesList.stream().anyMatch(categories -> categories.getCatalogId() == inputCatalogId)) {
-                return inputCatalogId;
-            } else {
-                System.err.println("Tên danh mục không tồn tại, mời nhập lại");
+        if (categoriesList.isEmpty()) {
+            System.err.println("Không có danh mục nào, hãy thêm mới danh mục trước");
+            return -1;
+        } else {
+            while (true) {
+                System.out.println("Mời nhập Id danh mục cho sản phẩm");
+                categoriesList.stream().forEach(categories -> {
+                    System.out.printf("Mã ID: %-5d || Tên danh mục: %-10s\n", categories.getCatalogId(), categories.getCatalogName());
+                });
+                int inputCatalogId = InputMethods.getInteger();
+                if (categoriesList.stream().anyMatch(categories -> categories.getCatalogId() == inputCatalogId)) {
+                    return inputCatalogId;
+                } else {
+                    System.err.println("Tên danh mục không tồn tại, mời nhập lại");
+                }
             }
         }
     }
